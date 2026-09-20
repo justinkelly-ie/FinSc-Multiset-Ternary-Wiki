@@ -23,8 +23,8 @@ prop_bit3ScaleTransformBounded b =
   in i >= -1 && i <= 1
 
 public export
-prop_bit3InvertScaleGalois : Bit3 -> Bool
-prop_bit3InvertScaleGalois b =
+prop_bit3InvertScaleAdjunction : Bit3 -> Bool
+prop_bit3InvertScaleAdjunction b =
   let i : Integer = scaleTransform b
       b' : Bit3 = invertScaleTransform i
   in b' == b
@@ -43,7 +43,7 @@ public export
 auditTernaryScaleTransformSpecProof : IO Bool
 auditTernaryScaleTransformSpecProof = do
   let r1 = qc prop_bit3ScaleTransformBounded
-  let r2 = qc prop_bit3InvertScaleGalois
+  let r2 = qc prop_bit3InvertScaleAdjunction
   let r3 = qc prop_bit3Involution
   let r4 = qc prop_bit3AdditiveInverse
   pure (r1.pass == Just True && r2.pass == Just True && r3.pass == Just True && r4.pass == Just True)

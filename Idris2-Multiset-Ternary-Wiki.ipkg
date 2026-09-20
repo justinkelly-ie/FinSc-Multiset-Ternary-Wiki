@@ -1,13 +1,13 @@
 package Idris2-Multiset-Ternary-Wiki
 version = 0.1.0
-executable = multiset-ternary-wiki
 
-depends = base, idris2-QuickCheck, Idris2-Multiset-Core, Idris2-Multiset-Ternary
-
+depends = Idris2-Multiset-Core, Idris2-Multiset-Ternary, Idris2-Multiset-Transform, base, idris2-QuickCheck, linear
 sourcedir = "Library"
 
-modules = Wiki.Generators
-        , Wiki.TernaryScaleTransformSpec
-        , Wiki.Main
+modules = Wiki.Foundations.Binary_Ternary_Narayana_Synthesis,
+          Wiki.Generators,
+          Wiki.Main,
+          Wiki.TernaryScaleTransformSpec
 
 main = Wiki.Main
+executable = multiset-ternary-wiki

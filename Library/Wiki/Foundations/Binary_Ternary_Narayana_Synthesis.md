@@ -42,6 +42,10 @@ $$\sum_{k=1}^n N(n, k) = C_n = \frac{1}{n+1} \binom{2n}{n}$$
 All theoretical properties are audited statically at compile-time using `%macro` reflection tactics in [`Reflect.NarayElab`](../../Idris2-Naray/src/Reflect/NarayElab.idr):
 
 ```idris
+module Wiki.Foundations.Binary_Ternary_Narayana_Synthesis
+
+import Reflect.NarayElab
+
 public export
 auditCatalan2ProofExport : auditCatalanProof 2 = True
 auditCatalan2ProofExport = Refl
