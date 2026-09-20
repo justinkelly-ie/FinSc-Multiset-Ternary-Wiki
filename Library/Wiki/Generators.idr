@@ -20,11 +20,3 @@ Arbitrary Bit3 where
   coarbitrary Bit3MinusOne gen = coarbitrary (the Nat 0) gen
   coarbitrary Bit3Zero gen     = coarbitrary (the Nat 1) gen
   coarbitrary Bit3PlusOne gen  = coarbitrary (the Nat 2) gen
-
-public export
-qc : (Arbitrary a, Show a, Testable prop) => (a -> prop) -> QCRes
-qc f = quickCheck (MkFn f)
-
-public export
-qc2 : (Arbitrary a, Show a, Arbitrary b, Show b, Testable prop) => (a -> b -> prop) -> QCRes
-qc2 f = quickCheck (MkFn (\x => MkFn (f x)))
