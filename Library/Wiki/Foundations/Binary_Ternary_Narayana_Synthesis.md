@@ -6,7 +6,7 @@
 
 ## 🏛️ Theoretical Overview
 
-The transition from binary logic ($\mathbb{F}_2 = \{0, 1\}$) in [`idris2-Boole`](../../Idris2-Boole) to balanced ternary spacetime geometry ($\mathbb{F}_3 = \{-1, 0, 1\}$) in [`Idris2-Universe2`](../../Idris2-Universe2) is governed by **Narayana Combinatorial Polynomials** and **Idris 2 Elaborator Reflection** (`%macro`).
+The transition from binary logic ($\mathbb{F}_2 = \{0, 1\}$) in [`idris2-Boole`](../../FinSc-Boole) to balanced ternary spacetime geometry ($\mathbb{F}_3 = \{-1, 0, 1\}$) in [`FinSc-Universe2`](../../FinSc-Universe2) is governed by **Narayana Combinatorial Polynomials** and **Idris 2 Elaborator Reflection** (`%macro`).
 
 ### 1. Narayana Numbers $N(n, k)$ & Catalan Refinement
 
@@ -39,7 +39,7 @@ $$\sum_{k=1}^n N(n, k) = C_n = \frac{1}{n+1} \binom{2n}{n}$$
 
 ## 🛠️ Verification Witness Matrix
 
-All theoretical properties are audited statically at compile-time using `%macro` reflection tactics in [`Reflect.NarayElab`](../../Idris2-Naray/src/Reflect/NarayElab.idr):
+All theoretical properties are audited statically at compile-time using `%macro` reflection tactics in [`Reflect.NarayElab`](../../FinSc-Naray/src/Reflect/NarayElab.idr):
 
 ```idris
 module Wiki.Foundations.Binary_Ternary_Narayana_Synthesis
