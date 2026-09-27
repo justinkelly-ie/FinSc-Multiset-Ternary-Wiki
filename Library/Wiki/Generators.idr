@@ -2,8 +2,8 @@ module Wiki.Generators
 
 import public QuickCheck
 import Core.NarayAlphabet
-import Math.BoxInt
-import Core.BoxInt
+import Stage0.BoxInt
+import Stage0.BoxInt
 
 %default total
 

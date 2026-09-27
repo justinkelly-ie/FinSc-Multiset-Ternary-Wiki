@@ -3,11 +3,11 @@
 ```idris
 module Wiki.TernaryScaleTransformSpec
 
-import Core.BoxInt
-import Core.ScaleTransform
+import Stage0.BoxInt
+import Stage1.ScaleTransform
 import Core.NarayAlphabet
 import Logic.TernaryLogic
-import Math.OnSeq.FusedStream
+import Stage0.OnSeq.FusedStream
 import Data.Fuel
 import Wiki.Generators
 import public QuickCheck
