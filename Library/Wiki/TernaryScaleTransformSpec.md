@@ -5,8 +5,8 @@ module Wiki.TernaryScaleTransformSpec
 
 import Stage0.BoxInt
 import Stage1.ScaleTransform
-import Core.NarayAlphabet
-import Logic.TernaryLogic
+import Stage0.NarayAlphabet
+import Stage1.TernaryLogic
 import Stage0.OnSeq.FusedStream
 import Data.Fuel
 import Wiki.Generators

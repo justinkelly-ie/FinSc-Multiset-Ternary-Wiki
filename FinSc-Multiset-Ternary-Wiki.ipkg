@@ -1,7 +1,7 @@
 package FinSc-Multiset-Ternary-Wiki
 version = 0.1.0
 
-depends = FinSc-Multiset-Core, FinSc-Multiset-Ternary, FinSc-Multiset-Transform, base, idris2-QuickCheck, linear
+depends = FinSc-Multiset, FinSc-Metric-Substrate, FinSc-Multiset-Ternary, FinSc-Multiset-Transform, base, idris2-QuickCheck, linear
 sourcedir = "Library"
 
 modules = Wiki.Foundations.Binary_Ternary_Narayana_Synthesis,

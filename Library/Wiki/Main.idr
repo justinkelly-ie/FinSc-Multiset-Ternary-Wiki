@@ -2,7 +2,7 @@ module Wiki.Main
 
 import System
 import Wiki.TernaryScaleTransformSpec
-import Core.NarayAlphabet
+import Stage0.NarayAlphabet
 
 %default total
 

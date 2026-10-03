@@ -44,7 +44,7 @@ All theoretical properties are audited statically at compile-time using `%macro`
 ```idris
 module Wiki.Foundations.Binary_Ternary_Narayana_Synthesis
 
-import Reflect.NarayElab
+import Stage0.NarayElab
 
 public export
 auditCatalan2ProofExport : auditCatalanProof 2 = True

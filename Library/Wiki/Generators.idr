@@ -1,7 +1,7 @@
 module Wiki.Generators
 
 import public QuickCheck
-import Core.NarayAlphabet
+import Stage0.NarayAlphabet
 import Stage0.BoxInt
 import Stage0.BoxInt
 
