@@ -31,17 +31,11 @@ record VerifiedTriadicState where
   unixelCount : Nat
   0 dimensionPrf : TriadicDimensionWitness unixelCount
 
-||| $O(1)$ allocation deforested triadic unixel stream transducer using fusedHylomorphism
-public export covering
+||| $O(1)$ allocation deforested triadic unixel stream transducer using foldStreamNat
+public export
 fusedTriadicUnixelStream : Fuel -> List (Nat, Nat) -> Nat
-fusedTriadicUnixelStream f items =
-  fusedHylomorphism f
-    (\st => case st of
-              [] => Done
-              (u1, u2) :: rest => Yield (u1 + u2) rest)
-    (\val, acc => val + acc)
-    0
-    items
+fusedTriadicUnixelStream _ items =
+  foldStreamNat (length items) (\acc, (u1, u2) => acc + u1 + u2) 0 (stream items)
 ```
 
 ## QuickCheck Verification Properties
