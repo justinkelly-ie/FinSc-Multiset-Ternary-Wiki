@@ -8,6 +8,7 @@ import Stage1.ScaleTransform
 import Stage0.NarayAlphabet
 import Stage1.TernaryLogic
 import Stage0.OnSeq.FusedStream
+import Stage0.StructuralFuel
 import Data.Fuel
 import Wiki.Generators
 import public QuickCheck
@@ -31,11 +32,11 @@ record VerifiedTriadicState where
   unixelCount : Nat
   0 dimensionPrf : TriadicDimensionWitness unixelCount
 
-||| $O(1)$ allocation deforested triadic unixel stream transducer using foldStreamNat
+||| $O(1)$ allocation deforested triadic unixel stream transducer using foldStreamNat and model-indexed GohFuel
 public export
-fusedTriadicUnixelStream : Fuel -> List (Nat, Nat) -> Nat
-fusedTriadicUnixelStream _ items =
-  foldStreamNat (length items) (\acc, (u1, u2) => acc + u1 + u2) 0 (stream items)
+fusedTriadicUnixelStream : GohFuel cap -> List (Nat, Nat) -> Nat
+fusedTriadicUnixelStream fuel items =
+  foldStreamNat (gohSteps fuel) (\acc, (u1, u2) => acc + u1 + u2) 0 (stream items)
 ```
 
 ## QuickCheck Verification Properties
@@ -71,6 +72,6 @@ auditTernaryScaleTransformSpecProof = do
   let r2 = qc prop_bit3InvertScaleAdjunction
   let r3 = qc prop_bit3Involution
   let r4 = qc prop_bit3AdditiveInverse
-  let streamSum = fusedTriadicUnixelStream (limit 100) [(13, 14), (0, 0)]
+  let streamSum = fusedTriadicUnixelStream ellipticGohFuelModel [(13, 14), (0, 0)]
   pure (r1.pass == Just True && r2.pass == Just True && r3.pass == Just True && r4.pass == Just True && streamSum == 27)
 ```
