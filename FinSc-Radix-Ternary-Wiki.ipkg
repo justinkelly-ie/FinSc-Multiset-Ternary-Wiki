@@ -1,7 +1,9 @@
 package FinSc-Radix-Ternary-Wiki
 version = 0.1.0
+authors = "Justin Kelly"
+brief   = "Layer 4 Balanced Ternary Field F3 & Narayana Polynomial Verification Suite"
 
-depends = FinSc-Multiset, FinSc-Metric-Substrate, FinSc-Radix-Ternary, FinSc-Phase-Unfolding, base, idris2-QuickCheck, linear
+depends = FinSc-Multiset, FinSc-Metric-Substrate, FinSc-Radix-Binary, FinSc-Radix-Ternary, FinSc-Phase-Unfolding, base, idris2-QuickCheck, linear
 sourcedir = "Library"
 
 modules = Wiki.Foundations.Binary_Ternary_Narayana_Synthesis,
